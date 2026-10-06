@@ -43,9 +43,28 @@ header {
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #ffffff;
-  outline: 3px solid #2563eb;
+  border: 4px solid #75F4F4;
   margin-bottom: 20px;
+  /* Use linear and remove 'alternate' */
+  animation: smoothBorderCycle 8s linear infinite;
+}
+
+@keyframes smoothBorderCycle {
+  0% {
+    border-color: #75F4F4; 
+  }
+  25% {
+    border-color: #90E0F3; /* Violet */
+  }
+  50% {
+    border-color: #b8b3e9; /* Pink */
+  }
+  75% {
+    border-color: #D999B9; /* Cyan */
+  }
+  100% {
+    border-color: #D17B88; /* Back to Blue */
+  }
 }
 
 h1 {
