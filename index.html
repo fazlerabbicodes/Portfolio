@@ -3,174 +3,949 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fazle Rabbi | Portfolio</title>
+    <meta
+      name="description"
+      content="Fazle Rabbi - Computer Science & Engineering Undergraduate at East West University. Passionate about Artificial Intelligence (AI), Web Applications, JavaScript, and Node.js."
+    />
+    <meta name="author" content="Fazle Rabbi" />
+    <meta name="theme-color" content="#2563eb" />
+    <title>Fazle Rabbi | CSE Student & Developer (AI & Web Apps)</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="card">
-        <img src="rabbi.jpg" alt="Fazle Rabbi" class="profile-img" />
-        <h1>Fazle Rabbi</h1>
-        <p class="subtitle">CSE Student & Aspiring Software Developer</p>
-      </header>
+    <!-- Navigation Bar -->
+    <header class="site-header">
+      <div class="nav-container">
+        <a href="#hero" class="brand-link" aria-label="Fazle Rabbi Homepage">
+          <span class="brand-bracket">&lt;</span>FR<span class="brand-accent">.codes</span><span class="brand-bracket">/&gt;</span>
+        </a>
 
-      <main class="content-wrapper">
-        <section class="card">
-          <h2>About Me</h2>
-          <p>
-            I am currently pursuing my B.Sc. in Computer Science and Engineering
-            at
-            <a
-              href="https://www.ewubd.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >East West University</a
-            >. Passionate about problem-solving, structured programming, and
-            software development.
-          </p>
-        </section>
-
-        <section class="card">
-          <h2>Education</h2>
-          <ul class="edu-list">
-            <li>
-              <strong>B.Sc. in CSE</strong> —
-              <a
-                href="https://www.ewubd.edu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >East West University</a
-              >
-              (Ongoing)
-            </li>
-            <li>
-              <strong>HSC (2023)</strong> —
-              <a
-                href="https://www.nationalidealcollege.edu.bd/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >National Ideal College</a
-              >
-            </li>
-            <li>
-              <strong>JSC & SSC (2021)</strong> —
-              <a
-                href="https://frii.edu.bd/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Faizur Rahman Ideal Institute</a
-              >
-            </li>
+        <nav>
+          <ul class="nav-links" id="nav-menu">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
+        </nav>
 
-          <table>
-            <caption>
-              Academic Results
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Exam</th>
-                <th scope="col">GPA</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>JSC</td>
-                <td><span class="gpa-badge">5.00</span></td>
-              </tr>
-              <tr>
-                <td>SSC</td>
-                <td><span class="gpa-badge">5.00</span></td>
-              </tr>
-              <tr>
-                <td>HSC</td>
-                <td><span class="gpa-badge">4.42</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="card">
-          <h2>Skills</h2>
-          <div class="skills-container">
-            <div>
-              <div class="skill-group-title">Core Concepts</div>
-              <div class="badge-list">
-                <span class="badge">Structured Programming</span>
-                <span class="badge">Object-Oriented Programming (OOP)</span>
-                <span class="badge">Data Structures & Algorithms (DSA)</span>
-                <span class="badge">Operating System</span>
-                <span class="badge">Database Management</span>
-                <span class="badge">AutoCAD</span>
-              </div>
-            </div>
-
-            <div>
-              <div class="skill-group-title">Languages & Technologies</div>
-              <div class="badge-list">
-                <span class="badge">C</span>
-                <span class="badge">C++</span>
-                <span class="badge">Java</span>
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
-                <span class="badge">Linux</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="card">
-        <h3>Connect with Me</h3>
-        <div class="social-links">
-          <a
-            class="social-btn"
-            href="mailto:frkrabbi6@gmail.com"
-            aria-label="Send Email"
+        <div class="nav-actions">
+          <button
+            id="theme-toggle"
+            class="theme-toggle-btn"
+            aria-label="Toggle dark/light theme"
+            title="Toggle theme"
           >
-            <img
-              src="https://banner2.cleanpng.com/20240403/iyp/transparent-gmail-icon-google-logo-with-gmail-blue-red-green660d02d2a62dd6.40239800.webp"
-              alt="Gmail"
-              height="24"
-            />
+            <!-- Moon Icon (for switching to dark) -->
+            <svg class="icon-moon" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <!-- Sun Icon (for switching to light) -->
+            <svg class="icon-sun" viewBox="0 0 24 24" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <button
+            id="mobile-nav-toggle"
+            class="mobile-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Hero / Profile Section -->
+      <header class="card hero-card" id="hero">
+        <div class="avatar-wrapper">
+          <img
+            src="rabbi.jpg"
+            alt="Fazle Rabbi"
+            class="profile-img"
+            loading="eager"
+          />
+          <div class="status-pill">
+            <span class="status-indicator"></span>
+            <span>Exploring AI &amp; Web Tech</span>
+          </div>
+        </div>
+
+        <h1 class="hero-name">Fazle Rabbi</h1>
+
+        <div class="typing-container">
+          <span class="typing-text" id="typing-text">CSE Student & Aspiring Software Developer</span><span class="typing-cursor">|</span>
+        </div>
+
+        <p class="hero-bio">
+          Undergraduate Computer Science & Engineering student at
+          <strong>East West University</strong>. Having learned <strong>CSS</strong>, my current focus is on
+          <strong>JavaScript, Web Applications, Artificial Intelligence (AI), and Node.js</strong>,
+          grounded in solid foundations of structured programming, C, C++, and Java.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 18l6-6-6-6"></path>
+              <path d="M8 6l-6 6 6 6"></path>
+            </svg>
+            Explore Projects
           </a>
+          <a href="#contact" class="btn btn-outline">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Connect with Me
+          </a>
+          <button
+            class="btn btn-secondary btn-copy-email"
+            data-email="frkrabbi6@gmail.com"
+            title="Copy email to clipboard"
+          >
+            <svg viewBox="0 0 24 24">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            Copy Email
+          </button>
+        </div>
+
+        <!-- Social Profiles Bar -->
+        <div class="hero-socials">
+          <!-- GitHub -->
           <a
-            class="social-btn"
+            class="social-icon-btn"
+            href="https://github.com/fazlerabbicodes"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
+            title="GitHub: fazlerabbicodes"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            class="social-icon-btn"
             href="https://www.linkedin.com/in/fazlerabbicodes"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
+            title="LinkedIn: fazlerabbicodes"
           >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-              alt="LinkedIn"
-              height="22"
-            />
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
           </a>
+
+          <!-- Facebook -->
           <a
-            class="social-btn"
+            class="social-icon-btn"
             href="https://www.facebook.com/fazlerabbicodes"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook Profile"
+            title="Facebook: fazlerabbicodes"
           >
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTC2LprOG4NRZaUapT2JMdN60fYvNQOq-9rClLSPlyaw&s=10"
-              alt="Facebook"
-              height="22"
-            />
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              />
+            </svg>
           </a>
+
+          <!-- Email -->
           <a
-            class="social-btn"
-            href="https://github.com/fazlerabbicodes"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook Profile"
+            class="social-icon-btn"
+            href="mailto:frkrabbi6@gmail.com"
+            aria-label="Send Direct Email"
+            title="Email: frkrabbi6@gmail.com"
           >
-            <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="Github" height="25"></a
-          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 12.713l-11.985-8.713h23.97l-11.985 8.713zm0 2.574l-12-8.725v13.438h24v-13.438l-12 8.725z"
+              />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Quick Metrics Bar -->
+      <section class="metrics-grid" aria-label="Key Highlights">
+        <div class="metric-item">
+          <div class="metric-value">B.Sc. CSE</div>
+          <div class="metric-label">East West University</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">AI &amp; Web Apps</div>
+          <div class="metric-label">Core Passion &amp; Focus</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">JS &amp; Node.js</div>
+          <div class="metric-label">Current Pursuit</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">CSS Learned</div>
+          <div class="metric-label">Modern Responsive UI</div>
+        </div>
+      </section>
+
+      <!-- Main Content Sections -->
+      <main class="content-wrapper">
+        <!-- About Me Section -->
+        <section class="card" id="about">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <div class="section-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <h2>About Me</h2>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                Hello! I am <strong>Fazle Rabbi</strong>, a Computer Science and Engineering
+                undergraduate at
+                <a
+                  href="https://www.ewubd.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >East West University</a
+                >. I have a solid understanding of structured programming, Object-Oriented
+                Programming (OOP), and algorithmic problem-solving in C, C++, and Java.
+              </p>
+              <p>
+                I have already <strong>learned and mastered CSS</strong> (including Flexbox, CSS Grid,
+                modern layouts, keyframe animations, and responsive web design). My current focus
+                is centered on <strong>JavaScript (ES6+), Web Applications, Artificial Intelligence (AI),
+                and Node.js</strong>. I am fascinated by intelligent systems, neural concepts, and
+                building interactive web applications powered by modern JavaScript.
+              </p>
+            </div>
+
+            <div class="about-features">
+              <div class="feature-box">
+                <div class="feature-icon">🎓</div>
+                <div class="feature-content">
+                  <h4>Undergraduate Student</h4>
+                  <p>East West University (CSE)</p>
+                </div>
+              </div>
+
+              <div class="feature-box">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-content">
+                  <h4>Deep Interest in AI</h4>
+                  <p>Intelligent Systems &amp; Neural Tech</p>
+                </div>
+              </div>
+
+              <div class="feature-box">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-content">
+                  <h4>Current Focus</h4>
+                  <p>JavaScript, Web Apps, AI &amp; Node.js</p>
+                </div>
+              </div>
+
+              <div class="feature-box">
+                <div class="feature-icon">🎨</div>
+                <div class="feature-content">
+                  <h4>Learned Technology</h4>
+                  <p>CSS3 (Flexbox, Grid &amp; Responsive UI)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spotlight on AI, JS & Node.js Focus -->
+            <div class="learning-spotlight">
+              <div class="learning-spotlight-content">
+                <span class="learning-badge-pulse">Active Focus</span>
+                <h3>Target Pursuit: JavaScript, Web Apps, AI &amp; Node.js</h3>
+                <p>
+                  Having established a strong foundation in CSS styling and structured programming,
+                  I am focusing on building modern web applications with JavaScript and Node.js while
+                  actively exploring the possibilities of Artificial Intelligence (AI) to craft
+                  next-generation digital tools.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="card" id="skills">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <div class="section-icon">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h2>Skills &amp; Technologies</h2>
+            </div>
+          </div>
+
+          <!-- Interactive Category Filter -->
+          <div class="skills-filter-nav">
+            <button class="filter-btn active" data-filter="all">All Skills</button>
+            <button class="filter-btn" data-filter="focus">Current Focus (JS, Web Apps, AI, Node)</button>
+            <button class="filter-btn" data-filter="learned-web">Learned Web (CSS, HTML)</button>
+            <button class="filter-btn" data-filter="languages">Programming Languages</button>
+            <button class="filter-btn" data-filter="core">CS Fundamentals &amp; Tools</button>
+          </div>
+
+          <div class="skills-groups-wrapper">
+            <!-- Current Focus: JS, Web Apps, AI & Node.js -->
+            <div class="skill-group" data-category="focus">
+              <div class="skill-group-header">
+                <div class="skill-group-title">
+                  <span>🚀 Current Focus: Web Apps, Node.js &amp; AI</span>
+                </div>
+                <span class="skill-tag-highlight">Active Focus</span>
+              </div>
+              <div class="badge-list">
+                <span class="badge focus-badge">
+                  JavaScript (ES6+)
+                  <span class="badge-subtag">Focus</span>
+                </span>
+                <span class="badge focus-badge">
+                  Web Applications
+                  <span class="badge-subtag">Focus</span>
+                </span>
+                <span class="badge focus-badge">
+                  Artificial Intelligence (AI)
+                  <span class="badge-subtag">Interest</span>
+                </span>
+                <span class="badge focus-badge">
+                  Node.js
+                  <span class="badge-subtag">Focus</span>
+                </span>
+                <span class="badge">DOM Manipulation &amp; Events</span>
+                <span class="badge">Fetch API &amp; Async JS</span>
+                <span class="badge">Render Deployment</span>
+              </div>
+            </div>
+
+            <!-- Learned Web Technologies (CSS & HTML) -->
+            <div class="skill-group" data-category="learned-web">
+              <div class="skill-group-header">
+                <div class="skill-group-title">
+                  <span>🎨 Web Styling &amp; Markup</span>
+                </div>
+                <span class="skill-tag-learned">Learned &amp; Mastered</span>
+              </div>
+              <div class="badge-list">
+                <span class="badge learned-badge">
+                  CSS3 (Flexbox &amp; Grid)
+                  <span class="badge-subtag">Learned ✓</span>
+                </span>
+                <span class="badge learned-badge">
+                  Responsive Web Design
+                  <span class="badge-subtag">Learned ✓</span>
+                </span>
+                <span class="badge learned-badge">
+                  CSS Animations &amp; Transitions
+                  <span class="badge-subtag">Learned ✓</span>
+                </span>
+                <span class="badge learned-badge">
+                  HTML5 (Semantic &amp; Accessible)
+                  <span class="badge-subtag">Learned ✓</span>
+                </span>
+                <span class="badge">CSS Custom Properties (Variables)</span>
+              </div>
+            </div>
+
+            <!-- Programming Languages -->
+            <div class="skill-group" data-category="languages">
+              <div class="skill-group-header">
+                <div class="skill-group-title">
+                  <span>💻 Programming Languages</span>
+                </div>
+              </div>
+              <div class="badge-list">
+                <span class="badge">C</span>
+                <span class="badge">C++</span>
+                <span class="badge">Java</span>
+                <span class="badge">JavaScript</span>
+              </div>
+            </div>
+
+            <!-- Core Computer Science Concepts & Tools -->
+            <div class="skill-group" data-category="core">
+              <div class="skill-group-header">
+                <div class="skill-group-title">
+                  <span>🧠 Computer Science Fundamentals &amp; Tools</span>
+                </div>
+              </div>
+              <div class="badge-list">
+                <span class="badge">Artificial Intelligence (AI)</span>
+                <span class="badge">Structured Programming</span>
+                <span class="badge">Object-Oriented Programming (OOP)</span>
+                <span class="badge">Data Structures &amp; Algorithms (DSA)</span>
+                <span class="badge">Operating Systems</span>
+                <span class="badge">Database Management (DBMS)</span>
+                <span class="badge">Linux / Bash</span>
+                <span class="badge">Git &amp; GitHub</span>
+                <span class="badge">VS Code</span>
+                <span class="badge">AutoCAD</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Projects Section (ORIGINAL REPOSITORIES) -->
+        <section class="card" id="projects">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <div class="section-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <h2>Original Projects</h2>
+            </div>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: Neon Cyberpunk Calculator -->
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-badge-bar">
+                  <span class="project-category-tag">Live Web App</span>
+                  <span class="tech-pill">Deployed</span>
+                </div>
+                <h3 class="project-title">⚡ Neon Cyberpunk Calculator</h3>
+                <p class="project-desc">
+                  A retro-futuristic, neon cyberpunk calculator engineered with vanilla HTML,
+                  CSS, and JavaScript. Features full keyboard accessibility, dynamic auto-scaling
+                  font sizes, visual keypress animations, exponentiation (<code style="font-size: 0.85em;">X^n</code>),
+                  and edge-case floating-point precision math safeguards. Deployed live on Render.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">JavaScript (ES6+)</span>
+                  <span class="tech-pill">CSS3 (Learned)</span>
+                  <span class="tech-pill">HTML5</span>
+                  <span class="tech-pill">Render</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a
+                  href="https://github.com/fazlerabbicodes/Simple-calculator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link-btn"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  Repository
+                </a>
+                <a
+                  href="https://fazlerabbicodes-simple-calculator.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link-btn"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Live App
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: EWU CSE103 Quiz Game -->
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-badge-bar">
+                  <span class="project-category-tag">University Project</span>
+                  <span class="tech-pill">C Program</span>
+                </div>
+                <h3 class="project-title">🎮 EWU CSE103 Quiz Game Application</h3>
+                <p class="project-desc">
+                  A modular, text-based interactive quiz console application developed in C for
+                  CSE103: Structured Programming at East West University. Features persistent user
+                  registration and login, an admin control panel for dynamically managing questions,
+                  8 diverse categories across 3 difficulty levels, and a gamified 3-life scoring engine.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">C</span>
+                  <span class="tech-pill">Structured Programming</span>
+                  <span class="tech-pill">File I/O</span>
+                  <span class="tech-pill">East West Univ</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a
+                  href="https://github.com/fazlerabbicodes/ewu-cse103-quiz-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link-btn"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  Repository
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: Personal Developer Portfolio -->
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-badge-bar">
+                  <span class="project-category-tag">Web Development</span>
+                  <span class="tech-pill">Open Source</span>
+                </div>
+                <h3 class="project-title">🌐 Personal Developer Portfolio</h3>
+                <p class="project-desc">
+                  The original open-source codebase for this portfolio website. Built with semantic
+                  HTML5, modular CSS3 (incorporating dark/light mode CSS custom properties and
+                  glassmorphism), and vanilla JavaScript. Features dynamic role cycling, category-based
+                  skill filtering, and one-click email copying.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">HTML5</span>
+                  <span class="tech-pill">CSS3 (Learned)</span>
+                  <span class="tech-pill">JavaScript</span>
+                  <span class="tech-pill">Responsive</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a
+                  href="https://github.com/fazlerabbicodes/Portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link-btn"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  Repository
+                </a>
+                <a href="#hero" class="project-link-btn">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Active Site
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: AI & Node.js Web Apps Exploration -->
+            <article class="project-card">
+              <div class="project-top">
+                <div class="project-badge-bar">
+                  <span class="project-category-tag">Active Pursuit</span>
+                  <span class="tech-pill">In Development</span>
+                </div>
+                <h3 class="project-title">🤖 AI &amp; Node.js Web App Lab</h3>
+                <p class="project-desc">
+                  Hands-on exploratory laboratory focusing on my current core pursuits: developing
+                  modern web applications with Node.js backend services and JavaScript, while
+                  experimenting with Artificial Intelligence models and algorithmic problem solving.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Node.js</span>
+                  <span class="tech-pill">JavaScript</span>
+                  <span class="tech-pill">Artificial Intelligence</span>
+                  <span class="tech-pill">Web Apps</span>
+                </div>
+              </div>
+              <div class="project-footer">
+                <a
+                  href="https://github.com/fazlerabbicodes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link-btn"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  Follow on GitHub
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="card" id="education">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <div class="section-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <h2>Education &amp; Academic History</h2>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <!-- EWU -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div class="timeline-degree">B.Sc. in Computer Science &amp; Engineering</div>
+                  <span class="timeline-year">Ongoing</span>
+                </div>
+                <div class="timeline-institution">
+                  <a
+                    href="https://www.ewubd.edu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >East West University</a
+                  >
+                </div>
+                <p class="timeline-desc">
+                  Focused on computer science fundamentals, data structures, algorithms,
+                  structured programming in C, object-oriented programming in C++ &amp; Java,
+                  and computer systems architecture.
+                </p>
+              </div>
+            </div>
+
+            <!-- HSC -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div class="timeline-degree">Higher Secondary Certificate (HSC)</div>
+                  <span class="timeline-year">Passed 2023</span>
+                </div>
+                <div class="timeline-institution">
+                  <a
+                    href="https://www.nationalidealcollege.edu.bd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >National Ideal College</a
+                  >
+                </div>
+                <p class="timeline-desc">
+                  Science discipline with extensive coursework in Mathematics, Physics, and ICT.
+                </p>
+              </div>
+            </div>
+
+            <!-- SSC & JSC -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div class="timeline-degree">Secondary School Certificate (SSC) &amp; JSC</div>
+                  <span class="timeline-year">Passed 2021 &amp; 2018</span>
+                </div>
+                <div class="timeline-institution">
+                  <a
+                    href="https://frii.edu.bd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Faizur Rahman Ideal Institute</a
+                  >
+                </div>
+                <p class="timeline-desc">
+                  Completed secondary education with top honors and perfect GPA scores in both board examinations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Results Table -->
+          <div class="table-responsive">
+            <table>
+              <caption>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                Academic Results Summary
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Examination</th>
+                  <th scope="col">Institution</th>
+                  <th scope="col">Discipline</th>
+                  <th scope="col">Result (GPA)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>HSC (2023)</strong></td>
+                  <td>National Ideal College</td>
+                  <td>Science</td>
+                  <td><span class="gpa-badge">4.42 / 5.00</span></td>
+                </tr>
+                <tr>
+                  <td><strong>SSC (2021)</strong></td>
+                  <td>Faizur Rahman Ideal Institute</td>
+                  <td>Science</td>
+                  <td><span class="gpa-badge perfect-score">★ 5.00 / 5.00</span></td>
+                </tr>
+                <tr>
+                  <td><strong>JSC</strong></td>
+                  <td>Faizur Rahman Ideal Institute</td>
+                  <td>General Science</td>
+                  <td><span class="gpa-badge perfect-score">★ 5.00 / 5.00</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="card" id="contact">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <div class="section-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <h2>Connect &amp; Discuss</h2>
+            </div>
+          </div>
+
+          <div class="contact-layout">
+            <!-- Left: Contact Details -->
+            <div class="contact-info-card">
+              <div>
+                <h3>Let's Talk Tech &amp; AI</h3>
+                <p>
+                  Always excited to connect with fellow computer science students,
+                  developers, and tech enthusiasts to discuss Artificial Intelligence,
+                  modern web applications, or algorithmic problem solving!
+                </p>
+
+                <div class="contact-details-list">
+                  <div class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </div>
+                    <div class="contact-detail-text">
+                      <span>Email</span>
+                      <a href="mailto:frkrabbi6@gmail.com">frkrabbi6@gmail.com</a>
+                    </div>
+                  </div>
+
+                  <div class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div class="contact-detail-text">
+                      <span>Location</span>
+                      <p>Dhaka, Bangladesh</p>
+                    </div>
+                  </div>
+
+                  <div class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                      </svg>
+                    </div>
+                    <div class="contact-detail-text">
+                      <span>University</span>
+                      <p>East West University</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <button
+                  class="btn btn-primary btn-copy-email"
+                  data-email="frkrabbi6@gmail.com"
+                  style="width: 100%;"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Copy Email Address
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Interactive Quick Message Form -->
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <label for="form-name">Your Name</label>
+                <input
+                  type="text"
+                  id="form-name"
+                  class="form-control"
+                  placeholder="e.g. Alex"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Your Email</label>
+                <input
+                  type="email"
+                  id="form-email"
+                  class="form-control"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject">Subject</label>
+                <input
+                  type="text"
+                  id="form-subject"
+                  class="form-control"
+                  placeholder="AI Discussion / Tech Chat"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <textarea
+                  id="form-message"
+                  class="form-control"
+                  rows="4"
+                  placeholder="Hi Fazle Rabbi, I saw your projects and wanted to talk about..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                <svg viewBox="0 0 24 24">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- Site Footer -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="hero-socials">
+            <a
+              class="social-icon-btn"
+              href="https://github.com/fazlerabbicodes"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+            <a
+              class="social-icon-btn"
+              href="https://www.linkedin.com/in/fazlerabbicodes"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a
+              class="social-icon-btn"
+              href="https://www.facebook.com/fazlerabbicodes"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook Profile"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a
+              class="social-icon-btn"
+              href="mailto:frkrabbi6@gmail.com"
+              aria-label="Send Email"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M12 12.713l-11.985-8.713h23.97l-11.985 8.713zm0 2.574l-12-8.725v13.438h24v-13.438l-12 8.725z" />
+              </svg>
+            </a>
+          </div>
+
+          <p class="footer-copy">
+            Designed &amp; Developed by <span class="footer-highlight">Fazle Rabbi</span> &bull; Built with HTML5, CSS3 &amp; Modern JavaScript
+          </p>
+          <p class="footer-copy" style="font-size: 0.8rem;">
+            &copy; 2026 Fazle Rabbi. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
+
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
   </body>
 </html>
