@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initContactForm();
   initBackToTop();
+  initBrandColorInteraction();
 });
 
 /* ==========================================================================
@@ -337,5 +338,38 @@ function initBackToTop() {
       top: 0,
       behavior: 'smooth'
     });
+  });
+}
+
+/* ==========================================================================
+   9. Brand Accent Color Interaction
+   ========================================================================== */
+function initBrandColorInteraction() {
+  const brandCodes = document.getElementById('brand-codes');
+  if (!brandCodes) return;
+
+  const colorPalettes = [
+    'linear-gradient(135deg, #2563eb, #7c3aed, #ec4899, #f97316, #10b981, #06b6d4, #2563eb)',
+    'linear-gradient(135deg, #00f5ff, #7928ca, #ff0080, #00f5ff)',
+    'linear-gradient(135deg, #10b981, #06b6d4, #3b82f6, #10b981)',
+    'linear-gradient(135deg, #f59e0b, #ef4444, #ec4899, #f59e0b)',
+    'linear-gradient(135deg, #8b5cf6, #d946ef, #3b82f6, #8b5cf6)'
+  ];
+
+  let currentPaletteIndex = 0;
+
+  brandCodes.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+    brandCodes.style.backgroundImage = colorPalettes[currentPaletteIndex];
+    brandCodes.style.webkitBackgroundClip = 'text';
+    brandCodes.style.webkitTextFillColor = 'transparent';
+
+    brandCodes.style.transform = 'scale(1.2) rotate(4deg)';
+    setTimeout(() => {
+      brandCodes.style.transform = '';
+    }, 250);
   });
 }
